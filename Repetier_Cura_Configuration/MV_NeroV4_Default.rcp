@@ -1,0 +1,133 @@
+[print]
+name = MV_NeroV4_Default
+defaultQuality = qAtqlVfAaKn5QmZ9dhylESutumWxBzZ4
+travelSpeedMin = 35
+travelSpeedMax = 45
+firstLayerSpeedMin = 20
+firstLayerSpeedMax = 25
+infillSpeedMin = 35
+infillSpeedMax = 45
+skinSpeedMin = 20
+skinSpeedMax = 35
+infillType = 0
+innerPerimeterMin = 30
+innerPerimeterMax = 45
+outerPerimeterMin = 25
+outerPerimeterMax = 35
+printSpeedMin = 25
+printSpeedMax = 40
+nozzleDiameter = 0
+gcodeFlavour = 0
+retractionCombing = True
+combing = 1
+multiVolumeOverlap = 0
+cutOffObjectBottom = 0
+shellThickness = 1
+infillTopBottomThickness = 0.9
+infillDensityPercent = 20
+supportType = 1
+platformAdhesion = 0
+dualExtrusion = 0
+wipeAndPrimeTower = True
+oozeShield = False
+enableRetraction = True
+retractionSpeed = 38
+retractionDistance = 1.8
+multiExtruderSwitchAmount = 16
+startGCode = """
+; Default start code
+G28 ; Home extruder
+G1 Z15 F{Z_TRAVEL_SPEED}
+M107 ; Turn off fan
+G90 ; Absolute positioning
+M82 ; Extruder in absolute mode
+{IF_BED}M190 S{BED}
+; Activate all used extruder
+{IF_EXT0}M104 T0 S{TEMP0}
+G92 E0 ; Reset extruder position
+; Wait for all used extruders to reach temperature
+{IF_EXT0}M109 T0 S{TEMP0}
+"""
+endGCode = """
+; Default end code
+G1 X0 Y190 F800 ; Get extruder out of way. Uncomment to use!
+M107 ; Turn off fan
+; Disable all extruder
+G91 ; Relative positioning
+{IF_EXT0}T0
+{IF_EXT0}G1 E-1 ; Reduce filament pressure
+M104 T0 S0
+G90 ; Absolute positioning
+G92 E0 ; Reset extruder position
+;M140 S0 ; Disable heated bed
+M84 ; Turn steppers off
+M300 S2349 P53
+M300 S0 P53
+M300 S2349 P53
+M300 S0 P53
+M300 S2349 P53
+M300 S0 P53
+M300 S2349 P428
+M300 S932 P428
+M300 S2093 P428
+M300 S2349 P107
+M300 S0 P214
+M300 S2093 P107
+M300 S2349 P857
+"""
+preSwitchExtruderCode = 
+postSwitchExtruderCode = 
+wipeAndPrimeTowerVolume = 15
+retractionMinimumTravel = 1.5
+minimumExtrusionBeforeRetract = 0.02
+zhop = 0
+skirtLineCount = 4
+skirtDistance = 3
+skirtMinimumLength = 150
+solidInfillTop = True
+solidInfillBottom = True
+infillOverlapPercent = 15
+supportStructureType = 0
+supportOverhang = 60
+supportFillPercent = 15
+supportDistanceXY = 0.9
+supportDistanceZ = 0.2
+supportExtruder = -1
+spiralizeOuterContour = False
+brimWidth = 5
+raftExtraMargin = 5
+raftLineSpacing = 1
+raftBaseThickness = 0.3
+raftBaseWidth = 0.7
+raftInterfaceThickness = 0.2
+raftInterfaceLineWidth = 0.2
+raftAirGap = 0
+raftAirGapLayer0 = 0
+raftSurfaceLayer = 1
+fixCombineEverythingA = True
+fixCombineEverythingB = False
+fixKeepOpenFaces = False
+fixExtensiveStitching = False
+fanFullAtHeight = 0.4
+perimeterBeforeInfill = True
+minimumSpeed = 10
+coolHeadLift = False
+numQuality = 3
+[quality_0]
+name = 0.2 mm
+signature = omK5cD9JJ221GN1vMFXKsjDo6c5Sd8Lx
+layerHeight = 0.2
+layer0widthPercent = 100
+firstLayerHeight = 0.4
+[quality_1]
+name = 0.3 mm
+signature = qAtqlVfAaKn5QmZ9dhylESutumWxBzZ4
+layerHeight = 0.3
+layer0widthPercent = 100
+firstLayerHeight = 0.3
+[quality_2]
+name = 0.18 mm
+signature = pe3LMgjoQlnuLOmCCmRQv7bkipzyzcKg
+layerHeight = 0.2
+layer0widthPercent = 90
+firstLayerHeight = 0.3

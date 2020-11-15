@@ -1,0 +1,10 @@
+[filament]
+name = MV_NeroV4_Default_filament.rcp
+diameter = 1.75
+multiplierPercent = 100
+printingTemperature = 208
+enableCooling = True
+bedTemperature = 0
+fanSpeedMin = 50
+fanSpeedMax = 100
+minimalLayerTime = 2
