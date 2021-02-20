@@ -14,6 +14,6 @@ Creación de impresora 3D casera.
 * Docs - Documentos varios acerca del proyecto.
 * Firmware - El firmware usado para esta impresora es una configuración de Marlin. Mas datos sobre este firmware se pueden encontrar en su [pagina oficial](https://marlinfw.org/)
   * Interface_design_LCD12864 - Contiene imagenes de diseño para el inicio y la interfaz de la pantalla.
-  * Marlin-1.1.9_NeroV4 - Codigo y configuración de Marlin.
+  * Marlin-2.0.x - Codigo y configuración de Marlin.
 * Slicer_Profiles - Perfiles de configuracion de la impresora para algunos Slicers.
   * Repetier_Cura_Configuration - Perfil de configuración para Repetier-Host con Cura Engine. El Slicer Repetier se puede obtener desde su [pagina principal](https://www.repetier.com/)
