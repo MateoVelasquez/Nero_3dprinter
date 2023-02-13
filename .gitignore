@@ -1,2 +1,5 @@
 # Ignorando archivos CFG
 *.cfg
+
+# Ignorando archivos CAD
+/CAD
